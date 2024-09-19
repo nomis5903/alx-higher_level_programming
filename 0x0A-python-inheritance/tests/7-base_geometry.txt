@@ -1,0 +1,91 @@
+The "7-base_geometry" module
+==========================
+
+using "BaseGeometry" class
+--------------------
+
+First importing
+
+	>>> bg = __import__("7-base_geometry").BaseGeometry
+
+Making an object instance
+
+	>>> new_bg = bg()
+	>>> isinstance(new_bg, bg)
+	True
+
+using "area" method
+-------------------
+
+Testing normal behavior:
+
+	>>> new_bg.area()
+	Traceback (most recent call last):
+	Exception: area() is not implemented
+
+using "integer_validator" method
+--------------------------------
+
+Testing normal behavior:
+
+	>>> new_bg.integer_validator("value", 1)
+
+Testing without args:
+
+	>>> new_bg.integer_validator()
+	Traceback (most recent call last):
+	TypeError: value must be an integer
+
+Testing with boolean:
+
+	>>> new_bg.integer_validator("bool", True)
+	Traceback (most recent call last):
+	TypeError: bool must be an integer
+
+Testing zero as value:
+
+	>>> new_bg.integer_validator("value", 0)
+	Traceback (most recent call last):
+	ValueError: value must be greater than 0
+
+Testing nagtive number as value:
+
+	>>> new_bg.integer_validator("value", -5)
+	Traceback (most recent call last):
+	ValueError: value must be greater than 0
+
+Testing string as value:
+
+	>>> new_bg.integer_validator("value", "number")
+	Traceback (most recent call last):
+	TypeError: value must be an integer
+
+Testing list as value:
+
+	>>> new_bg.integer_validator("value", [1, 2])
+	Traceback (most recent call last):
+	TypeError: value must be an integer
+
+Testing dictionary as value:
+
+	>>> new_bg.integer_validator("value", {"name": "Goku"})
+	Traceback (most recent call last):
+	TypeError: value must be an integer
+
+Testing set as value:
+
+	>>> new_bg.integer_validator("value", {5, 4})
+	Traceback (most recent call last):
+	TypeError: value must be an integer
+
+Testing tuble as value:
+
+	>>> new_bg.integer_validator("value", (1, 2))
+	Traceback (most recent call last):
+	TypeError: value must be an integer
+
+Testing None as value:
+
+	>>> new_bg.integer_validator("value", None)
+	Traceback (most recent call last):
+	TypeError: value must be an integer
