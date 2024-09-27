@@ -1,1 +1,1 @@
-Python - Hello, World
+0x15. JavaScript - Web jQuery
